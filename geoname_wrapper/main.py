@@ -53,10 +53,18 @@ def main():
     # Output format
     format_choices = ['csv', 'json', 'raw']
     parser.add_argument(
-        '-o', '--output-format',
+        '-t', '--output-format',
         default='json',
         choices=format_choices,
         help=f"The output format. Default: json",
+        type=str
+    )
+
+    # Output file
+    parser.add_argument(
+        '-o', '--output-file',
+        default='',
+        help='The output file. Default: output.[format]',
         type=str
     )
 
@@ -79,7 +87,8 @@ def main():
         feature_class=args.feature_class,
         fields=user_fields,
         output_format=args.output_format,
-        limit=args.limit
+        output_file=args.output_file,
+        limit=args.limit,
     )
 
 

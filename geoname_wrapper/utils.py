@@ -126,6 +126,7 @@ def scrape_geonames(
         continent: Optional[str] = '', feature_class: Optional[str] = '',
         fields: List[str] = None,
         output_format: Optional[str] = 'json',
+        output_file: Optional[str] = '',
         limit: Optional[int] = 100
 ):
     """
@@ -231,7 +232,7 @@ def scrape_geonames(
     # Convert requested fields to pythonic format for filtering
     pythonic_fields = [to_pythonic_string(f) for f in fields]
 
-    output_data(all_extracted_data[:limit], pythonic_fields, output_format)
+    output_data(all_extracted_data[:limit], pythonic_fields, output_format, output_file)
 
 
 def dms_to_gps_coordinates(dms_string: str) -> float:

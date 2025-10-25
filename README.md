@@ -50,8 +50,10 @@ optional arguments:
                         Type of feature to search for. Default: city
   -s FIELDS [FIELDS ...], --fields FIELDS [FIELDS ...]
                         List of fields to include in the output (e.g, name, latitude)
-  -o {csv,json,raw}, --output-format {csv,json,raw}
+  -t {csv,json,raw}, --output-format {csv,json,raw}
                         The output format. Default: json
+  -o OUTPUT_FILE, --output-file OUTPUT_FILE
+                        The output file. Default: output.[format]
   -l LIMIT, --limit LIMIT
                         The number of items to retrieve
 ```
@@ -61,19 +63,19 @@ optional arguments:
 Fetch the first 50 cities in Cameroon, keep name and coordinates, and save them to JSON:
 
 ```bash
-python main.py -c CM -f city -s name latitude longitude -o json -l 50
+python main.py -c CM -f city -s name latitude longitude -t json -l 50
 ```
 
 List parks across Europe and print the full raw records to the terminal:
 
 ```bash
-python main.py -ct EU -f parks_area -o raw
+python main.py -ct EU -f parks_area -t raw
 ```
 
 Create a CSV of mountains in South America with custom fields:
 
 ```bash
-python main.py -ct SA -f mountain_hill -s name country latitude longitude feature_class -o csv
+python main.py -ct SA -f mountain_hill -s name country latitude longitude feature_class -t csv
 ```
 
 ## Output Formats
