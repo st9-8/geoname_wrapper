@@ -93,6 +93,7 @@ Files are created in the working directory unless you modify `utils.output_data`
   BeautifulSoup, and collects rows via `extract_table_data`.
 - `utils.dms_to_gps_coordinates` converts DMS strings (e.g., `E 9° 56′ 25''`) into decimal floats.
 - `enums.py` maps descriptive feature class names to GeoNames codes and provides continent shortcuts.
+- `collect_cities.sh` is a bash script which allows you to collect cities of more than 200 countries in a json file.
 
 ## Troubleshooting
 
